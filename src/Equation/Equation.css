@@ -1,0 +1,19 @@
+.equation {
+
+}
+
+.equation__input {
+
+}
+
+.equation__table {
+    width: 100%;
+}
+
+.equation__left-button {
+    float: left;
+}
+
+.equation__right-button {
+    float: right;
+}
