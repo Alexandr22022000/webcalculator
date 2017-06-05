@@ -12,6 +12,7 @@
     border-color: #FFFFFF #cccccc #FFFFFF #FFFFFF;
     color: #000000;
     cursor: pointer;
+    outline: none;
 }
 
 .toolbar__button_active {

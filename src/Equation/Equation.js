@@ -13,12 +13,12 @@ class Equation extends React.Component {
                 <table className="equation__table">
                     <td>
                         <tr className="equation__left-button">
-                            <Button content="Настройки" onClick={() => this.props.dispatcher(SettingsOpenClose)}/>
+                            <Button onClick={() => this.props.dispatcher(SettingsOpenClose)}>Настройки</Button>
                         </tr>
                     </td>
                     <td>
                         <tr className="equation__right-button">
-                            <Button content="Решить" onClick={() => this.props.dispatcher(CalcEquation)}/>
+                            <Button onClick={() => this.props.dispatcher(CalcEquation)}>Решить</Button>
                         </tr>
                     </td>
                 </table>

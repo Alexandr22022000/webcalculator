@@ -1,3 +1,4 @@
+import Big from 'big.js';
 import BigDecimal from 'bigdecimal';
 
 function calc (text) {
@@ -13,23 +14,24 @@ function calc (text) {
         i = (i !== -1) ? i : text.indexOf("*");
         i = (i !== -1) ? i : text.indexOf("/");
 
-        let a = text.substring(0, i), b = text.substring(i + 1, text.length), c;
+        let a = new Big(text.substring(0, i)), b = new Big(text.substring(i + 1, text.length)), c;
 
         switch (text.substring(i, i + 1)) {
             case "+":
-                c = a + b;
+                c = a.plus(b);
                 break;
 
             case "-":
-                c = a - b;
+                c = a.minus(b);
                 break;
 
             case "*":
-                c = a * b;
+                c = a.times(b);
                 break;
 
             case "/":
-                c = a / b;
+                Big.DP = 1000;
+                c = a.div(b);
                 break;
 
             default:
@@ -37,7 +39,7 @@ function calc (text) {
                 break;
         }
 
-        c = new BigDecimal.BigDecimal(c).setScale(500).toPlainString()  + "";
+        c = new BigDecimal.BigDecimal(c.toString()).setScale(1000).toPlainString();
 
         i = c.length;
 
@@ -50,10 +52,10 @@ function calc (text) {
             i -= 1;
         }
 
-        return {line1: c};
+        return {answer: c};
     }
     catch (e) {
-        return {line1: "Не верные даннные"};
+        return {answer: "Не верные даннные"};
     }
 }
 

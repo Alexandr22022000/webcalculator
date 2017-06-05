@@ -118,9 +118,9 @@ function calcEquation (text, sqrSet, fractionSet, shortFractionSet) {
                         drobLength = drobLength + "—";
                     }
 
-                    line4 = ("X=" + drobLength + "=" + (DrobText(-1 * b,2 * a)));                               //дробь
+                    line4 = ("X=" + drobLength + "=" + (fractionText(-1 * b,2 * a)));                               //дробь
 
-                    lineAnswer = ("X=" + DrobText(-1 * b, 2 * a) + ";");                                        //ответ
+                    lineAnswer = ("X=" + fractionText(-1 * b, 2 * a) + ";");                                        //ответ
                 }
                 else {                                                          //если D<0
                     line3 = ("D<0 X=НЕТ КОРНЕЙ");
@@ -134,17 +134,17 @@ function calcEquation (text, sqrSet, fractionSet, shortFractionSet) {
                 line2 = ("X(" + a + "X" + ((b > 0) ? "+" : "") + b + ")=0");                                    //вынесение за скобку
                 line3 = ("X=0  или  " + a + "X" + ((b > 0) ? "+" : "") + b + "=0");                             //разбитее на 2 уровнения
                 line4 = (a + "X=" + -1*b);                                                                      //решение второго уровнения
-                line5 = ("X=" + DrobText(-1*b, a));                                                             //ответ второго уровнения
-                lineAnswer = ("X=0; X=" + DrobText(-1*b, a) + ";");                                             //ответ
+                line5 = ("X=" + fractionText(-1*b, a));                                                             //ответ второго уровнения
+                lineAnswer = ("X=0; X=" + fractionText(-1*b, a) + ";");                                             //ответ
             }
             else {
                 if ((a !== 0) && (b === 0) && (c !== 0)) {                      //если не полное квадратное уровнение только с Х^2
                     line1 = (a + "X^2=" + -1*c);                                                                //упрощенный вид
-                    line2 = ("X^2=" + DrobText(-1*c, a));                                                       //решение
+                    line2 = ("X^2=" + fractionText(-1*c, a));                                                       //решение
                     if (((-1*c) / a) >= 0) {                                                                    //если X^2 >= 0
                         line3 = ("X=" + ((((c / a) === Math.round(c / a)) || !fraction) ?
                             SqrtText((-1*c) / a) :
-                            "√" + DrobText(-1*c, a)));                                                          //ответ уровнения
+                            "√" + fractionText(-1*c, a)));                                                          //ответ уровнения
                         lineAnswer = (line3 + ";");                                                             //ответ
                     }
                     else {                                                      // если X^2 < 0
@@ -155,8 +155,8 @@ function calcEquation (text, sqrSet, fractionSet, shortFractionSet) {
                 else {
                     if ((a === 0) && (b !== 0) && (c !== 0)) {                  //если обычне линейное уровнение
                         line1 = (b + "X=" + -1*c);                                  //упрощенный вид
-                        line2 = ("X=" + DrobText(-1*c, b));                         //решение
-                        lineAnswer = ("X=" + DrobText(-1*c, b) + ";");              //ответ
+                        line2 = ("X=" + fractionText(-1*c, b));                         //решение
+                        lineAnswer = ("X=" + fractionText(-1*c, b) + ";");              //ответ
                     }
                     else {
                         if ((a !== 0) && (b === 0) && (c === 0)) {              //если X^2=0
@@ -223,17 +223,17 @@ function calcEquation (text, sqrSet, fractionSet, shortFractionSet) {
 /**
  * @return {string}
  */
-function DrobText (a, b) {        //вывод сокращенных дробей
+function fractionText (a, b) {                          //вывод сокращенных дробей
     if (((a / b) === Math.round(a / b)) || !fraction) {
-        return (a / b) + "";                        //если все считается
+        return (a / b) + "";                                //если все считается
     }
 
-    if (shortFraction) {                                //нужно ли сокращять?
+    if (shortFraction) {                                    //нужно ли сокращять?
         let c = Math.sqrt(a * a);
         let d = Math.sqrt(b * b);
         let i = 0;
 
-        while (c !== d) {                            //поиск НОД
+        while (c !== d) {                                   //поиск НОД
             if (c > d) {
                 c = c - d;
             }
@@ -241,13 +241,13 @@ function DrobText (a, b) {        //вывод сокращенных дробе
                 d = d - c;
             }
 
-            i++; if (i > 1000000) { return a + "/" + b; } //предахранитель
+            i++; if (i > 1000000) { return a + "/" + b; }   //предахранитель
         }
 
-        return (a / c) + "/" + (b / d);             //вывод сокращенной дроби
+        return (a / c) + "/" + (b / d);                     //вывод сокращенной дроби
     }
 
-    return a + "/" + b;                             //вывод не посчитанной дроби
+    return a + "/" + b;                                     //вывод не посчитанной дроби
 }
 
 /**
@@ -299,10 +299,10 @@ function addNumber (number, text, n, n2, sizeX) {
 function getX (a, b, c, one) {
     if ((Math.round(Math.sqrt(b*b-4*a*c)) === Math.sqrt(b*b-4*a*c)) || sqr) {
         if (one) {
-            return DrobText((-1*b) - Math.sqrt(b*b-4*a*c), (2*a));
+            return fractionText((-1*b) - Math.sqrt(b*b-4*a*c), (2*a));
         }
         else {
-            return DrobText((-1*b) + Math.sqrt(b*b-4*a*c), (2*a));
+            return fractionText((-1*b) + Math.sqrt(b*b-4*a*c), (2*a));
         }
     }
     else {

@@ -12,7 +12,7 @@ class Calculator extends React.Component {
             <div className="calculator">
                 <Input className="calculator__input" dispatcher={this.props.dispatcher}/>
                 <div className="calculator__button" onClick={() => this.props.dispatcher(Calc)}>
-                    <Button content="Считать"/>
+                    <Button>Считать</Button>
                 </div>
                 <p className="calculator__answer">Ответ:</p>
                 <p className="calculator__answer-text">{this.props.text}</p>
@@ -23,7 +23,7 @@ class Calculator extends React.Component {
 
 function updateProps (state) {
     return {
-        text: state.output.line1
+        text: state.output.answer
     };
 }
 

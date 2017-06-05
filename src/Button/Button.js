@@ -4,7 +4,7 @@ import './Button.css';
 class Button extends React.Component {
     render () {
         return (
-            <button className="button" onClick={this.props.onClick}>{ this.props.content }</button>
+            <button className="button" onClick={this.props.onClick}>{ this.props.children }</button>
         );
     }
 }

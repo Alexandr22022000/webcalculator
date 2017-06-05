@@ -5,13 +5,13 @@ import { SetInputDate } from '../scripts/actions';
 class Input extends React.Component {
     render () {
         return (
-            <textarea className={"input " + this.props.className} id="input" onChange={this.onChange.bind(this)}/>
+            <textarea className={"input " + this.props.className} onChange={this.onChange.bind(this)}/>
         );
     }
 
     onChange (e) {
         const action = SetInputDate;
-        action.date = document.getElementById("input").value;
+        action.date = e.currentTarget.value;
         this.props.dispatcher(action);
     }
 }
