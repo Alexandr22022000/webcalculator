@@ -52,10 +52,10 @@ function calc (text) {
             i -= 1;
         }
 
-        return {answer: c};
+        return {lineAnswer: c};
     }
     catch (e) {
-        return {answer: "Не верные даннные"};
+        return {lineAnswer: "Не верные даннные"};
     }
 }
 

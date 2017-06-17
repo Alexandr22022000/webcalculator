@@ -1,0 +1,13 @@
+.lists-filter__content {
+    background-color: #cccccc;
+    margin: 0 auto 0 auto;
+    max-width: 1700px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.lists-filter__container {
+    margin: 30px 20px;
+    background-color: #FFFFFF;
+    padding: 25px;
+}
