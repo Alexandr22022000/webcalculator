@@ -2,6 +2,10 @@ import Equation from '../components/Equation';
 import {connect} from 'react-redux';
 import {openCloseSettings, startCalcEquation} from '../actions/actions';
 
+const mapStateToProps = (state) => ({
+      answer: state.calcState.answer
+});
+
 const mapDispatchToProps = (dispatch) => ({
     onStartCalc () {
         dispatch(startCalcEquation());
@@ -12,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default connect(null, mapDispatchToProps)(Equation);
+export default connect(mapStateToProps, mapDispatchToProps)(Equation);

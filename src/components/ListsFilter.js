@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import '../style/ListsFilter.css';
 import {EDUCATION_LIST, CALCULATOR_LIST, INFORMATION_LIST} from '../constants/listTypes';
 import Settings from '../conteiners/Settings';
@@ -36,10 +36,6 @@ const ListsFilter = ({listIndex}) => {
             </div>
         </div>
     );
-};
-
-ListsFilter.propsTypes = {
-    listIndex: PropTypes.string.isRequired
 };
 
 export default ListsFilter;

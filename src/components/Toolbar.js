@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import '../style/Toolbar.css';
 import {EDUCATION_LIST, CALCULATOR_LIST, INFORMATION_LIST} from '../constants/listTypes';
 
@@ -21,10 +21,5 @@ const Toolbar = ({list, onClick}) => (
         </button>
     </div>
 );
-
-Toolbar.propsTypes = {
-    list: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
-};
 
 export default Toolbar;

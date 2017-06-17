@@ -1,10 +1,10 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import '../style/Equation.css';
-import Answer from '../conteiners/Answer';
+import Answer from '../components/Answer';
 import Input from '../conteiners/Input';
 import Button from './Button';
 
-const Equation = ({onOpenSettings, onStartCalc}) => (
+const Equation = ({onOpenSettings, onStartCalc, answer}) => (
     <div className="equation">
         <Input className="equation__input"/>
         <table className="equation__table">
@@ -19,13 +19,8 @@ const Equation = ({onOpenSettings, onStartCalc}) => (
                 </tr>
             </td>
         </table>
-        <Answer/>
+        <Answer answer={answer}/>
     </div>
 );
-
-Equation.propsTypes = {
-    onStartCalc: PropTypes.func.isRequired,
-    onOpenSettings: PropTypes.func.isRequired
-};
 
 export default Equation;

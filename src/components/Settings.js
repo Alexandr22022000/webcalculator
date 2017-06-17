@@ -1,54 +1,39 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import '../style/Settings.css';
 import {SQR, FRACTION, SHORT_FRACTION} from '../constants/settingTypes';
 
-const Settings = ({onChangeSettings, onClose, open, settingSqr, settingFraction, settingShortFraction}) => (
-    <div className={"settings" + (open ? "" : " settings_hidden")}>
-        <div className={"settings__container" + (open ? "" : " settings__container_close")}>
-            <a className="settings__close-button" onClick={onClose}>✕</a>
-            <div>
-                <tr>
-                    <td>
-                        <a className="settings__text">Всегда выносить квадратный корень</a>
-                    </td>
-                    <td>
-                        <div className={"settings__checkbox-container" + (settingSqr ? " settings__checkbox-container_active" : "")}>
-                            <label className={"settings__checkbox" + (settingSqr ? " settings__checkbox_active" : "")} onClick={() => onChangeSettings(SQR)}/>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a className="settings__text">Использовать обыкновенные дроби</a>
-                    </td>
-                    <td>
-                        <div className={"settings__checkbox-container" + (settingFraction ? " settings__checkbox-container_active" : "")}>
-                            <label className={"settings__checkbox" + (settingFraction ? " settings__checkbox_active" : "")} onClick={() => onChangeSettings(FRACTION)}/>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a className="settings__text">Сокращять дроби</a>
-                    </td>
-                    <td>
-                        <div className={"settings__checkbox-container" + (settingShortFraction  ? " settings__checkbox-container_active" : "")}>
-                            <label className={"settings__checkbox" + (settingShortFraction ? " settings__checkbox_active" : "")} onClick={() => onChangeSettings(SHORT_FRACTION)}/>
-                        </div>
-                    </td>
-                </tr>
+class Settings extends React.Component {
+    render() {
+        return (
+            <div className={"settings" + (this.props.open ? "" : " settings_hidden")}>
+                <div className={"settings__container" + (this.props.open ? "" : " settings__container_close")}>
+                    <a className="settings__close-button" onClick={this.props.onClose}>✕</a>
+                    <div>
+                        {this.itemBuilder("Всегда выносить квадратный корень", SQR)}
+                        {this.itemBuilder("Использовать обыкновенные дроби", FRACTION)}
+                        {this.itemBuilder("Сокращять дроби", SHORT_FRACTION)}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-);
+        );
+    }
 
-Settings.propsTypes = {
-    onChangeSettings: PropTypes.func.isRequired,
-    onClose: PropTypes.func.isRequired,
-    open: PropTypes.bool.isRequired,
-    settingSqr: PropTypes.bool.isRequired,
-    settingFraction: PropTypes.bool.isRequired,
-    settingShortFraction: PropTypes.bool.isRequired
-};
+    itemBuilder(text, type) {
+        return (
+            <tr>
+                <td>
+                    <a className="settings__text">{text}</a>
+                </td>
+                <td>
+                    <div className={"settings__checkbox-container" + (this.props.settingsState[type] ? " settings__checkbox-container_active" : "")}>
+                        <label
+                            className={"settings__checkbox" + (this.props.settingsState[type] ? " settings__checkbox_active" : "")}
+                            onClick={() => this.props.onChangeSettings(type)}/>
+                    </div>
+                </td>
+            </tr>
+        );
+    }
+}
 
 export default Settings;

@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import '../style/Calculator.css';
 import Input from '../conteiners/Input';
 import Button from './Button';
@@ -13,10 +13,5 @@ const Calculator = ({onStartCalc, answer}) => (
         <p className="calculator__answer-text">{answer}</p>
     </div>
 );
-
-Calculator.propsTypes = {
-    onStartCalc: PropTypes.func.isRequired,
-    answer: PropTypes.string.isRequired
-};
 
 export default Calculator;
