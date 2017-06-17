@@ -1,0 +1,21 @@
+.toolbar {
+    background-color: #FFF;
+    text-align: left;
+}
+
+.toolbar__button {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    background-color: #FFF;
+    border: 1px solid;
+    border-color: #FFFFFF #cccccc #FFFFFF #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+    outline: none;
+}
+
+.toolbar__button_active {
+    background: #efefef;
+    border-color: #efefef #cccccc #aaaaaa #efefef;
+}
