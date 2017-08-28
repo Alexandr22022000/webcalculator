@@ -6,7 +6,7 @@ import calc from '../scripts/calc';
 const defaultState = {
     inputText: "",
     settings: {[SQR]: false, [FRACTION]: true, [SHORT_FRACTION]: true},
-    answer: {
+    answerEquation: {
         line1: '',
         line2: '',
         line3: '',
@@ -18,16 +18,17 @@ const defaultState = {
         line6Top: '',
         line6Bottom: '',
         lineAnswer: '',
-    }
+    },
+    answerCalc: ''
 };
 
 const calcState = (state = defaultState, action) => {
     switch (action.type) {
         case START_CALC_EQUATION:
-            return {...state, answer: calcEquation(state.inputText, state.settings)};
+            return {...state, answerEquation: calcEquation(action.text, state.settings)};
 
         case START_CALC:
-            return {...state, answer: calc(state.inputText)};
+            return {...state, answerCalc: calc(action.text)};
 
         case CHANGE_INPUT_TEXT:
             return {...state, inputText: action.text};

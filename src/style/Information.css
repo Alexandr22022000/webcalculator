@@ -9,3 +9,23 @@
 .information__p {
     font-size: 25px;
 }
+
+
+.information__h-mobile {
+    font-size: 5vmin;
+}
+
+.information__p-mobile {
+    font-size: 4vmin;
+}
+
+
+@media only screen and (orientation: landscape) {
+    .information__h-mobile {
+        font-size: 8vmin;
+    }
+
+    .information__p-mobile {
+        font-size: 7vmin;
+    }
+}

@@ -3,12 +3,13 @@ import {connect} from 'react-redux';
 import {openCloseSettings, startCalcEquation} from '../actions/actions';
 
 const mapStateToProps = (state) => ({
-      answer: state.calcState.answer
+    answer: state.calcState.answerEquation,
+    isMobile: state.interfaceState.isMobile
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onStartCalc () {
-        dispatch(startCalcEquation());
+    onStartCalc (text) {
+        dispatch(startCalcEquation(text));
     },
 
     onOpenSettings() {

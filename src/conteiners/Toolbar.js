@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import {changeList} from '../actions/actions';
 
 const mapStateToProps = (state) => ({
-    list: state.interfaceState.list
+    list: state.interfaceState.list,
+    isMobile: state.interfaceState.isMobile
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

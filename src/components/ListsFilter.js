@@ -4,9 +4,9 @@ import {EDUCATION_LIST, CALCULATOR_LIST, INFORMATION_LIST} from '../constants/li
 import Settings from '../conteiners/Settings';
 import Equation from '../conteiners/Equation';
 import Calculator from '../conteiners/Calculator';
-import Information from './Information';
+import Information from '../conteiners/Information';
 
-const ListsFilter = ({listIndex}) => {
+const ListsFilter = ({listIndex, isMobile}) => {
     let list;
     switch (listIndex) {
         case EDUCATION_LIST:
@@ -29,8 +29,8 @@ const ListsFilter = ({listIndex}) => {
     return (
         <div className="lists-filter">
             {(listIndex === EDUCATION_LIST) ? <Settings/> : ""}
-            <div className="lists-filter__content">
-                <div className="lists-filter__container">
+            <div className={isMobile ? "lists-filter__content-mobile" : "lists-filter__content"}>
+                <div className={isMobile ? "lists-filter__container-mobile" : "lists-filter__container"}>
                     { list }
                 </div>
             </div>

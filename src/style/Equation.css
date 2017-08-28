@@ -2,10 +2,96 @@
     width: 100%;
 }
 
+.equation__input {
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc;
+    font-size: 30px;
+    resize: vertical;
+}
+
+.equation__button {
+    width: 200px;
+
+    height: 60px;
+    background-color: #cccccc;
+    margin: 20px -4px;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+}
+
 .equation__left-button {
     float: left;
 }
 
 .equation__right-button {
     float: right;
+}
+
+@media only screen and (max-width: 700px){
+    .equation__left-button {
+        width: 40%;
+    }
+
+    .equation__right-button {
+        width: 40%;
+    }
+
+    .equation__button {
+        width: 100%;
+    }
+}
+
+
+.equation__left-button-mobile {
+    width: 40%;
+    float: left;
+}
+
+.equation__right-button-mobile {
+    width: 40%;
+    float: right;
+}
+
+.equation__button-mobile {
+    width: 100%;
+    font-size: 5vmin;
+    height: 8vh;
+
+    background-color: #cccccc;
+    margin: 20px -4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.equation__input-mobile {
+    width: 100%;
+    height: 25vh;
+    background-color: #cccccc;
+    font-size: 5vmin;
+    resize: vertical;
+}
+
+@media only screen and (orientation: landscape) {
+    .equation__input-mobile {
+        width: 100%;
+        height: 40vh;
+        background-color: #cccccc;
+        font-size: 7vmin;
+    }
+
+    .equation__button-mobile {
+        width: 100%;
+        font-size: 7vmin;
+        height: 12vh;
+    }
+
+    .equation__left-button-mobile {
+        width: 25%;
+    }
+
+    .equation__right-button-mobile {
+        width: 25%;
+    }
 }

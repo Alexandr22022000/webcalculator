@@ -1,9 +1,10 @@
-import {CHANGE_LIST, OPEN_CLOSE_SETTINGS} from '../constants/actionsTypes';
+import {CHANGE_LIST, OPEN_CLOSE_SETTINGS, START_APP} from '../constants/actionsTypes';
 import {EDUCATION_LIST} from '../constants/listTypes';
 
 const defaultState = {
     list: EDUCATION_LIST,
-    settingsIsOpen: false
+    settingsIsOpen: false,
+    isMobile: false
 };
 
 const interfaceState = (state = defaultState, action) => {
@@ -13,6 +14,9 @@ const interfaceState = (state = defaultState, action) => {
 
         case OPEN_CLOSE_SETTINGS:
             return {...state, settingsIsOpen: !state.settingsIsOpen};
+
+        case START_APP:
+            return {...state, isMobile: action.isMobile};
 
         default:
             return state;

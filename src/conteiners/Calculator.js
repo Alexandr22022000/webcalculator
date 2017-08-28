@@ -4,12 +4,13 @@ import {startCalc} from '../actions/actions';
 
 
 const mapStateToProps = (state) => ({
-    answer: state.calcState.answer.lineAnswer
+    answer: state.calcState.answerCalc,
+    isMobile: state.interfaceState.isMobile
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onStartCalc () {
-        dispatch(startCalc());
+    onStartCalc (text) {
+        dispatch(startCalc(text));
     }
 });
 

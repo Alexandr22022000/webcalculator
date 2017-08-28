@@ -4,7 +4,8 @@ import {changeSettings, openCloseSettings} from '../actions/actions';
 
 const mapStateToProps = (state) => ({
     open: state.interfaceState.settingsIsOpen,
-    settingsState: state.calcState.settings
+    settingsState: state.calcState.settings,
+    isMobile: state.interfaceState.isMobile
 });
 
 const mapDispatchToProps = (dispatch) => ({

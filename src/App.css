@@ -3,4 +3,13 @@
     min-height: 100vh;
     margin-bottom: -1000vw;
     text-align: center;
+    width: 100%;
+}
+
+.App-mobile {
+    background-color: #FFF;
+    min-height: 100vh;
+    margin-bottom: -1000vw;
+    text-align: center;
+    width: 100%;
 }

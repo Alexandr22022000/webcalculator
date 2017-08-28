@@ -15,6 +15,33 @@
     outline: none;
 }
 
+@media only screen and (max-width: 700px) {
+    .toolbar__button {
+        width: 33.33%;
+    }
+}
+
+.toolbar__button-mobile {
+    height: 7vh;
+    width: 33.33%;
+    font-size: 4.5vmin;
+    background-color: #FFF;
+    border: 1px solid;
+    border-color: #FFFFFF #cccccc #FFFFFF #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+    outline: none;
+}
+
+@media only screen and (orientation: landscape) {
+    .toolbar__button-mobile {
+        height: 12vh;
+        font-size: 5.5vmin;
+    }
+}
+
+
+
 .toolbar__button_active {
     background: #efefef;
     border-color: #efefef #cccccc #aaaaaa #efefef;

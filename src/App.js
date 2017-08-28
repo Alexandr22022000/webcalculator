@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {startApp} from "./actions/actions";
 import Toolbar from './conteiners/Toolbar';
 import ListsFilter from './conteiners/ListsFilter';
 import './App.css';
 
 class App extends Component {
+  componentDidMount () {
+    this.props.start();
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={this.props.isMobile ? "App-mobile" : "App"}>
         <Toolbar/>
         <ListsFilter/>
       </div>
@@ -14,4 +20,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    isMobile: state.interfaceState.isMobile
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    start () {
+        dispatch(startApp());
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
