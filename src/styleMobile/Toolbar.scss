@@ -1,0 +1,24 @@
+@import "../style/Toolbar";
+
+.toolbar-mobile {
+  @include toolbar();
+}
+
+.toolbar__button-mobile {
+  @include toolbar__button();
+
+  height: 7vh;
+  width: 33.33%;
+  font-size: 4.5vmin;
+}
+
+@media only screen and (orientation: landscape) {
+  .toolbar__button-mobile {
+    height: 12vh;
+    font-size: 5.5vmin;
+  }
+}
+
+.toolbar__button_active-mobile {
+  @include toolbar__button_active();
+}

@@ -1,0 +1,41 @@
+@import "../style/Equation";
+
+.equation__table {
+  @include equation__table();
+}
+
+.equation__input {
+  @include equation__input();
+  height: 100%;
+  font-size: 30px;
+}
+
+.equation__button {
+  @include equation__button();
+  width: 200px;
+  height: 60px;
+  margin: 20px -4px;
+  font-size: 30px;
+}
+
+.equation__left-button {
+  @include equation__left-button();
+}
+
+.equation__right-button {
+  @include equation__right-button();
+}
+
+@media only screen and (max-width: 700px){
+  .equation__left-button {
+    width: 40%;
+  }
+
+  .equation__right-button {
+    width: 40%;
+  }
+
+  .equation__button {
+    width: 100%;
+  }
+}

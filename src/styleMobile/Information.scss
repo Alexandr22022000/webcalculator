@@ -1,0 +1,23 @@
+@import "../style/Information";
+
+.information-mobile {
+  @include information();
+}
+
+.information__h-mobile {
+  font-size: 5vmin;
+}
+
+.information__p-mobile {
+  font-size: 4vmin;
+}
+
+@media only screen and (orientation: landscape) {
+  .information__h-mobile {
+    font-size: 8vmin;
+  }
+
+  .information__p-mobile {
+    font-size: 7vmin;
+  }
+}

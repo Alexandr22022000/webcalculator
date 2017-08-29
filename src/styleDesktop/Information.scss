@@ -1,0 +1,13 @@
+@import "../style/Information";
+
+.information {
+  @include information();
+}
+
+.information__h {
+  font-size: 30px;
+}
+
+.information__p {
+  font-size: 25px;
+}

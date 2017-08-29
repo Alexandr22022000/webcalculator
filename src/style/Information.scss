@@ -1,0 +1,6 @@
+@import "colors";
+
+@mixin information {
+    color: $color-text;
+    text-align: left;
+};

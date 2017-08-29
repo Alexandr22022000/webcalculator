@@ -1,0 +1,41 @@
+@import "../style/Calculator";
+
+.calculator {
+  @include calculator();
+}
+
+.calculator__button-container {
+  @include calculator__button-container();
+}
+
+.calculator__button {
+  @include calculator__button();
+  width: 200px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.calculator__answer-text {
+  @include calculator__answer-text();
+  min-height: 300px;
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.calculator__answer {
+  @include calculator__answer();
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.calculator__input {
+  @include calculator__input();
+  height: 200px;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 700px){
+  .calculator__button {
+    max-width: 100%;
+  }
+}

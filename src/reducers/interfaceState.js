@@ -3,8 +3,7 @@ import {EDUCATION_LIST} from '../constants/listTypes';
 
 const defaultState = {
     list: EDUCATION_LIST,
-    settingsIsOpen: false,
-    isMobile: false
+    settingsIsOpen: false
 };
 
 const interfaceState = (state = defaultState, action) => {
@@ -14,9 +13,6 @@ const interfaceState = (state = defaultState, action) => {
 
         case OPEN_CLOSE_SETTINGS:
             return {...state, settingsIsOpen: !state.settingsIsOpen};
-
-        case START_APP:
-            return {...state, isMobile: action.isMobile};
 
         default:
             return state;

@@ -1,0 +1,33 @@
+@import "colors";
+@import "mixin";
+
+@mixin calculator {
+  text-align: left;
+}
+
+@mixin calculator__button-container {
+  text-align: right;
+  width: 100%;
+}
+
+@mixin calculator__button {
+  @include button();
+  background-color: $color-window-button;
+  margin: 20px -4px;
+}
+
+@mixin calculator__answer {
+  color: $color-text;
+}
+
+@mixin calculator__answer-text {
+  color: $color-text;
+  word-wrap: break-word;
+}
+
+@mixin calculator__input {
+  color: $color-text;
+  background-color: $color-window-input;
+  width: 100%;
+  resize: vertical;
+}

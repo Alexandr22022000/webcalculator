@@ -1,0 +1,56 @@
+@import "../style/Calculator";
+
+.calculator-mobile {
+  @include calculator();
+}
+
+.calculator__button-container-mobile {
+  @include calculator__button-container();
+}
+
+.calculator__button-mobile {
+  @include calculator__button();
+  width: 40%;
+  height: 8vh;
+  font-size: 5vmin;
+}
+
+.calculator__answer-text-mobile {
+  @include calculator__answer-text();
+  min-height: 8vh;
+  font-size: 5vmin;
+  margin: 2vh 0;
+}
+
+.calculator__answer-mobile {
+  @include calculator__answer();
+  font-size: 5vmin;
+  margin: 2vh 0;
+}
+
+.calculator__input-mobile {
+  @include calculator__input();
+  height: 25vh;
+  font-size: 5vmin;
+}
+
+@media only screen and (orientation: landscape) {
+  .calculator__button-mobile {
+    width: 25%;
+    font-size: 7vmin;
+    height: 12vh;
+  }
+
+  .calculator__input-mobile {
+    height: 30vh;
+    font-size: 7vmin;
+  }
+
+  .calculator__answer-text-mobile {
+    font-size: 7vmin;
+  }
+
+  .calculator__answer-mobile {
+    font-size: 7vmin;
+  }
+}

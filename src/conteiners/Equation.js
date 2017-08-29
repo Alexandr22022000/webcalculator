@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import {openCloseSettings, startCalcEquation} from '../actions/actions';
 
 const mapStateToProps = (state) => ({
-    answer: state.calcState.answerEquation,
-    isMobile: state.interfaceState.isMobile
+    answer: state.calcState.answerEquation
 });
 
 const mapDispatchToProps = (dispatch) => ({

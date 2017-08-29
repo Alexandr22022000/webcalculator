@@ -1,0 +1,8 @@
+@import "../style/App";
+@import "../style/colors";
+
+.App {
+  background-color: $color-background;
+  min-height: 100vh;
+  margin-bottom: -1000vw;
+}

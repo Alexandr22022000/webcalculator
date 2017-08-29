@@ -1,0 +1,7 @@
+@import "colors";
+
+@mixin button {
+  color: $color-text;
+  cursor: pointer;
+  outline: none;
+}

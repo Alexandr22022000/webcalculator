@@ -1,0 +1,20 @@
+@import "colors";
+@import "mixin";
+
+@mixin toolbar {
+    background-color: $color-toolbar-background;
+    text-align: left;
+}
+
+@mixin toolbar__button {
+    @include button();
+    border: 1px solid;
+
+    background-color: $color-toolbar-button;
+    border-color: $color-toolbar-button $color-toolbar-button-border $color-toolbar-button $color-toolbar-button;
+}
+
+@mixin toolbar__button_active {
+    background: $color-toolbar-button-active;
+    border-color: $color-toolbar-button-active $color-toolbar-button-border $color-toolbar-button-border-bottom-active $color-toolbar-button-active;
+}

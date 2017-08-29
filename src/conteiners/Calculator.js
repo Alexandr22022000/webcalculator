@@ -4,8 +4,7 @@ import {startCalc} from '../actions/actions';
 
 
 const mapStateToProps = (state) => ({
-    answer: state.calcState.answerCalc,
-    isMobile: state.interfaceState.isMobile
+    answer: state.calcState.answerCalc
 });
 
 const mapDispatchToProps = (dispatch) => ({

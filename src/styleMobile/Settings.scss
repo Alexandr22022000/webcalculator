@@ -1,0 +1,117 @@
+@import "../style/Settings";
+
+.settings-mobile {
+  @include settings();
+  top: 12vh;
+}
+
+.settings_hidden-mobile {
+  @include settings_hidden();
+}
+
+@keyframes showDiv {
+  0%, 99% {
+    z-index: 0;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
+.settings__container-mobile {
+  @include settings__container();
+  padding: 14vw 0 6vw 5vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__container-mobile {
+    padding: 7vw 0 3vw 2.5vw;
+  }
+}
+
+.settings__container_close-mobile {
+  right: 100vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__container-mobile_close {
+    right: 50vw;
+  }
+}
+
+.settings__text-mobile {
+  @include settings__text();
+  font-size: 4vw;
+  margin: 0 1vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__text-mobile {
+    font-size: 2vw;
+    margin: 0 0.5vw;
+  }
+}
+
+.settings__checkbox-container-mobile {
+  @include settings__checkbox-container();
+  width: 15vw;
+  height: 4vw;
+  margin: 3vw  2vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__checkbox-container-mobile {
+    width: 7.5vw;
+    height: 2vw;
+    margin: 1.5vw  1vw;
+  }
+}
+
+.settings__checkbox-container_active-mobile {
+  @include settings__checkbox-container_active();
+}
+
+.settings__checkbox-mobile {
+  @include settings__checkbox();
+  width: 7vw;
+  height: 7vw;
+  top: -1.5vw;
+  left: -1.5vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__checkbox-mobile {
+    width: 3.5vw;
+    height: 3.5vw;
+    top: -0.75vw;
+    left: -0.75vw;
+  }
+}
+
+.settings__checkbox_active-mobile {
+  left: 10vw;
+}
+
+@media only screen and (orientation: landscape) {
+  .settings__checkbox_active-mobile {
+    left: 5vw;
+  }
+}
+
+.settings__close-button-mobile {
+  @include settings__close-button();
+  height: 14vw;
+  width: 14vw;
+  margin-top: -14vw;
+  font-size: 10vw;
+}
+
+
+@media only screen and (orientation: landscape) {
+  .settings__close-button-mobile {
+    height: 7vw;
+    width: 7vw;
+    margin-top: -7vw;
+    font-size: 5vw;
+  }
+}

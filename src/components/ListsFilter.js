@@ -1,12 +1,12 @@
 import React from 'react';
-import '../style/ListsFilter.css';
+import selectClassName from '../scripts/selectClassName';
 import {EDUCATION_LIST, CALCULATOR_LIST, INFORMATION_LIST} from '../constants/listTypes';
 import Settings from '../conteiners/Settings';
 import Equation from '../conteiners/Equation';
 import Calculator from '../conteiners/Calculator';
-import Information from '../conteiners/Information';
+import Information from './Information';
 
-const ListsFilter = ({listIndex, isMobile}) => {
+const ListsFilter = ({listIndex}) => {
     let list;
     switch (listIndex) {
         case EDUCATION_LIST:
@@ -27,10 +27,10 @@ const ListsFilter = ({listIndex, isMobile}) => {
     }
 
     return (
-        <div className="lists-filter">
+        <div className={selectClassName('lists-filter')}>
             {(listIndex === EDUCATION_LIST) ? <Settings/> : ""}
-            <div className={isMobile ? "lists-filter__content-mobile" : "lists-filter__content"}>
-                <div className={isMobile ? "lists-filter__container-mobile" : "lists-filter__container"}>
+            <div className={selectClassName('lists-filter__content')}>
+                <div className={selectClassName('lists-filter__container')}>
                     { list }
                 </div>
             </div>

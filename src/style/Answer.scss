@@ -1,0 +1,6 @@
+@import "colors";
+
+@mixin answer {
+    text-align: left;
+    color: $color-text;
+}

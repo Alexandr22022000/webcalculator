@@ -1,0 +1,9 @@
+@import "../style/App";
+@import "../style/colors";
+
+.App-mobile {
+  @include App();
+  background-color: $color-window-background;
+  min-height: 100vh;
+  margin-bottom: -1000vw;
+}

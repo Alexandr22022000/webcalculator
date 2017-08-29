@@ -1,0 +1,25 @@
+@import "colors";
+@import "mixin";
+
+@mixin equation__table {
+    width: 100%;
+}
+
+@mixin equation__input {
+    background-color: $color-window-input;
+    width: 100%;
+    resize: vertical;
+}
+
+@mixin equation__button {
+    background-color: $color-window-button;
+    @include button();
+}
+
+@mixin equation__left-button {
+    float: left;
+}
+
+@mixin equation__right-button {
+    float: right;
+}

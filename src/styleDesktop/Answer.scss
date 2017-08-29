@@ -1,0 +1,25 @@
+@import "../style/Answer";
+
+.answer {
+  @include answer();
+}
+
+.answer__text, .answer__text-up, .answer__text-down, .answer__text-report {
+  font-size: 35px;
+}
+
+.answer__text {
+  margin: 20px 0;
+}
+
+.answer__text-up {
+  margin: -20px 0 -40px 50px;
+}
+
+.answer__text-down {
+  margin: -35px 0 -20px 50px;
+}
+
+.answer__text-report {
+  margin: 50px 0 20px;
+}

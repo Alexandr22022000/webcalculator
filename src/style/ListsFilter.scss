@@ -1,0 +1,12 @@
+@import "colors";
+
+@mixin lists-filter__content {
+    background-color: $color-background;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+@mixin lists-filter__container {
+    background-color: $color-window-background;
+    padding: 25px;
+}

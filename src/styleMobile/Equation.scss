@@ -1,0 +1,51 @@
+@import "../style/Equation";
+
+.equation__table-mobile {
+  @include equation__table();
+}
+
+.equation__input-mobile {
+  @include equation__input();
+  height: 25vh;
+  font-size: 5vmin;
+}
+
+.equation__button-mobile {
+  @include equation__button();
+  width: 100%;
+  height: 8vh;
+  margin: 20px -4px;
+  font-size: 5vmin;
+}
+
+.equation__left-button-mobile {
+  @include equation__left-button();
+  width: 40%;
+}
+
+.equation__right-button-mobile {
+  @include equation__right-button();
+  width: 40%;
+}
+
+@media only screen and (orientation: landscape) {
+  .equation__input-mobile {
+    width: 100%;
+    height: 40vh;
+    font-size: 7vmin;
+  }
+
+  .equation__button-mobile {
+    width: 100%;
+    font-size: 7vmin;
+    height: 12vh;
+  }
+
+  .equation__left-button-mobile {
+    width: 25%;
+  }
+
+  .equation__right-button-mobile {
+    width: 25%;
+  }
+}
